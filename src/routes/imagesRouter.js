@@ -36,4 +36,17 @@ router.route('/:id').delete((req,res)=>{
         .catch(err => res.status(400).json('Error: ' + err))
 });
 
+router.route('/update/:id').post((req,res) => {
+        const { url, name, size, description, addURL, price } = req.body
+    Image.findById(req.params.id)
+        .then(image => {
+            image.url = url,
+            image.name = name,
+            image.size = size,
+            image.description = description,
+            image.addURL = addURL,
+            image.price = price
+        })
+})
+
 module.exports = router;
