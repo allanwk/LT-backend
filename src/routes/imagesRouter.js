@@ -46,6 +46,10 @@ router.route('/update/:id').post((req,res) => {
             image.description = description,
             image.addURL = addURL,
             image.price = price
+
+            image.save()
+             .then(()=>res.json('Image updated'))
+             .catch(err=>res.json('Error: ' + err))
         })
 })
 
