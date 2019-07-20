@@ -8,14 +8,15 @@ router.route('/').get((req, res) => {
 });
 
 router.route('/add').post((req, res) => {
-    const { url, name, size, description, addURL } = req.body;
+    const { url, name, size, description, addURL, price } = req.body;
 
     const newImage = new Image({
         url,
         name,
         size,
         description,
-        addURL
+        addURL,
+        price
     })
 
     newImage.save()

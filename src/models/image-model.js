@@ -32,6 +32,12 @@ const imageSchema = new Schema({
         unique: false,
         trim: false
     },
+    price:{
+        type: String,
+        required:true,
+        unique: false,
+        trim: false
+    },
 }, {
     timestamps: false,
 });
