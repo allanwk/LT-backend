@@ -26,18 +26,17 @@ const imageSchema = new Schema({
         unique: false,
         trim: false,
     },
-    addURL:[{
-        type: String,
-        required:false,
-        unique: false,
-        trim: false
-    }],
     price:{
         type: String,
         required:true,
         unique: false,
         trim: false
     },
+    url1:{ type: String },
+    url2:{ type: String },
+    url3:{ type: String },
+    url4:{ type: String },
+    url5:{ type: String },
 }, {
     timestamps: false,
 });

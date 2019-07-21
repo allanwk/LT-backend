@@ -8,15 +8,19 @@ router.route('/').get((req, res) => {
 });
 
 router.route('/add').post((req, res) => {
-    const { url, name, size, description, addURL, price } = req.body;
+    const { url, name, size, description, price, url1, url2, url3, url4, url5 } = req.body;
 
     const newImage = new Image({
         url,
         name,
         size,
         description,
-        addURL,
-        price
+        price,
+        url1,
+        url2,
+        url3,
+        url4,
+        url5
     })
 
     newImage.save()
@@ -37,15 +41,19 @@ router.route('/:id').delete((req,res)=>{
 });
 
 router.route('/update/:id').post((req,res) => {
-        const { url, name, size, description, addURL, price } = req.body
+        const { url, name, size, description, price, url1, url2, url3, url4, url5 } = req.body
     Image.findById(req.params.id)
         .then(image => {
             image.url = url,
             image.name = name,
             image.size = size,
             image.description = description,
-            image.addURL = addURL,
-            image.price = price
+            image.price = price,
+            image.url1 = url1,
+            image.url2 = url2,
+            image.url3 = url3,
+            image.url4 = url4,
+            image.url5 = url5,
 
             image.save()
              .then(()=>res.json('Image updated'))
